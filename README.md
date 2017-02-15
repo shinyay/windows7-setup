@@ -2,6 +2,9 @@
 ---
 ## 1. Chocolatey
 
+- [Install](https://chocolatey.org/install)
+  - [Uninstall](https://chocolatey.org/docs/uninstallation)
+
 ### Execution_Policies 対応
 
 ```
@@ -37,4 +40,11 @@ PS C:\WINDOWS\system32> Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 PS C:\WINDOWS\system32> iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-## 
+#### インストール・ディレクトリ
+
+- C:\ProgramData\chocolatey
+
+### Chocolatey 管理アプリケーション
+
+- ConEmu
+- msys2

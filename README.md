@@ -46,5 +46,40 @@ PS C:\WINDOWS\system32> iex ((new-object net.webclient).DownloadString('https://
 
 ### Chocolatey 管理アプリケーション
 
-- ConEmu
 - msys2
+  - `choco install msys2`
+    - 20160719.1.1
+- ConEmu
+  - `choco install conemu`
+    - ConEmu 17.1.18.0
+
+## ２．ConEmu
+
+### Msys2 の登録
+
+#### Startup
+
+- **Settings** -> **Startup** -> **Tasks**
+  - `Msys2::bash`
+  - `set CHERE_INVOKING=1 & MSYSTEM=MSYS & C:\tools\msys64\usr\bin\bash.exe --login -i -new_console:C:\tools\msys64\msys2.ico`
+
+#### ConEmu Here
+
+- **Settings** -> **Integration** -> **Command**
+  - `set CHERE_INVOKING=1 & MSYSTEM=MSYS & C:\tools\msys64\usr\bin\bash.exe -c "export CONEMU_CURRENT=$PWD && /c/tools/msys64/usr/bin/bash.exe --login  -i -new_console:C:\tools\msys64\msys2.ico"`
+
+- **/etc/profile**
+```
+if [ -n ${CONEMU_CURRENT} ]; then
+    cd ${CONEMU_CURRENT}
+else
+    cd ~
+fi
+```
+
+## 3. Msys2
+
+## 4. ATOM Beta
+
+- [Atom Beta](https://atom.io/beta)
+  - 1.15.0-beta2

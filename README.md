@@ -4,8 +4,11 @@
 2. ConEmu
 3. Msys2
 4. Atom Beta
-4. Hain
+5. Hain
+6. Oracke JDK
+
 ---
+
 ## 1. Chocolatey
 
 - [Install](https://chocolatey.org/install)
@@ -62,6 +65,8 @@ PS C:\WINDOWS\system32> iex ((new-object net.webclient).DownloadString('https://
 - Source Code Pro Programming Font
   - `choco install sourcecodepro`
     - 2.030.0
+
+---
 
 ## ２．ConEmu
 
@@ -128,9 +133,16 @@ fi
 
 #### Keys & Macro::Paste
 
+##### Paste mode
+
+- Shift+Instert: Do nothing
+- Ctrl+v: Multi lines
+
 ##### Mouse button actions
 
 - Right: <None>
+
+---
 
 ## 3. Msys2
 
@@ -183,7 +195,7 @@ $ pacman -Si ruby
 
 ```
 $ pacman -Qqe
-'''
+```
 
 ### pacman 設定ファイル
 
@@ -197,6 +209,39 @@ $ pacman -Qqe
 Color
 ```
 
+### 3.1. git
+
+- `pacmand -S git`
+
+```
+$ git config --global user.name "shinyay"
+$ git config --global user.email "shinya.com@gmail.com"
+$ git config --global core.editor 'vim -c "set fenc=utf-8"'
+$ git config --global color.diff auto
+$ git config --global color.status auto
+$ git config --global color.branch auto
+```
+
+### 3.2. SDKMAN!
+
+```
+$ curl -s "https://get.sdkman.io" | bash
+$ source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
+#### Beta Channel
+
+```
+$ sed -i.bak '/sdkman_beta/s/false/true/g' ${HOME}/.sdkman/etc/config
+$ sdk selfupdate force
+```
+
+#### Maven
+
+```
+$ sdk install maven
+```
+
 ## 4. ATOM Beta
 
 - [Atom Beta](https://atom.io/beta)
@@ -206,7 +251,15 @@ Color
 
 - C:\Apps\Atom_Beta_x64
 
-## Hain
+### Atom Packages Synchronization with apm stars
+
+```
+$ apm login
+$ apm stars --installed
+$ apm start --install
+```
+
+## 5. Hain
 
 - [GitHub:Release](https://github.com/appetizermonster/hain/releases)
   - v0.6.0
@@ -215,3 +268,26 @@ Color
 
 - **Preferences** -> **hain-plugin-filesearch**
   - C:\Apps
+
+## 6. Oracke JDK
+
+```
+ORACLE_JDK_URL=http://download.oracle.com/otn-pub/java/jdk/8u121-b13/e9e7ea248e2c4826b92b3f075a80e441/jdk-8u121-windows-x64.exe
+
+wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "${ORACLE_JDK_URL}"
+```
+
+### Install Path
+
+- **C:\Java\jdk1.8.0_121**
+
+### システム環境変数
+
+- JAVA_HOME
+- C:\Java\jdk1.8.0_121
+
+## 7. Oracle Enterprise Pack for Eclipse
+
+```
+$ wget --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn_software/oepe/12.2.1.5/neon/oepe-12.2.1.5-neon-distro-win32-x86_64.zip
+```

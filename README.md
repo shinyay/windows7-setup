@@ -81,7 +81,7 @@ PS C:\WINDOWS\system32> iex ((new-object net.webclient).DownloadString('https://
 #### ConEmu Here
 
 - **Settings** -> **Integration** -> **Command**
-  - `set CHERE_INVOKING=1 & MSYSTEM=MSYS & C:\tools\msys64\usr\bin\bash.exe -c "export CONEMU_CURRENT=$PWD && /c/tools/msys64/usr/bin/bash.exe --login  -i -new_console:C:\tools\msys64\msys2.ico"`
+  - `set CHERE_INVOKING=1 & set MSYSTEM=MSYS & C:\tools\msys64\usr\bin\bash.exe -c "export CONEMU_CURRENT=$PWD && /c/tools/msys64/usr/bin/bash.exe --login  -i -new_console:C:\tools\msys64\msys2.ico"`
 
 - **/etc/profile**
 ```

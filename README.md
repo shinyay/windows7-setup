@@ -242,6 +242,13 @@ $ sdk selfupdate force
 $ sdk install maven
 ```
 
+#### sbt
+
+```
+$ sdk install sbt
+```
+
+
 ## 4. ATOM Beta
 
 - [Atom Beta](https://atom.io/beta)
